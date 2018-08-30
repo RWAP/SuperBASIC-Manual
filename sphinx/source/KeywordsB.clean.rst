@@ -1,3 +1,4 @@
+
 ==========
 Keywords B
 ==========
@@ -5,11 +6,11 @@ Keywords B
 TODO
 ====
 
-- BASIC\_B% has URL #id1. Fix links properly for this one.
-- BASIC\_W% has URL #id2. Fix this also.
-- BAT$ has URL #id3. Fix it!
-- BEEP - Location is wrong. Table not properly formatted.
-- BIN$ is #id4.
+- :ref:`bicop` cross references keywords HCO and FCO- neither of which exist.
+- :ref:`bld` cross references keyword ESC which doesn't exist.
+
+
+..  _basic:
 
 BASIC
 =====
@@ -44,10 +45,13 @@ are started up or removed from memory.
 
 **CROSS-REFERENCE**
 
-See `BASICP <KeywordsB.clean.html#basicp>`__ and
-`BASIC\_W <KeywordsB.clean.html#basic-w>`__.
+See :ref:`basicp` and
+:ref:`basic-w`.
 
 --------------
+
+
+..  _basicp:
 
 BASICP
 ======
@@ -83,37 +87,48 @@ This suffers from the same problem as BASIC.
 
 **CROSS-REFERENCE**
 
-`BASIC\_B <KeywordsB.clean.html#basic-b>`__,
-`BASIC\_L <KeywordsB.clean.html#basic-l>`__,
-`BASIC\_W <KeywordsB.clean.html#basic-w>`__. See
-`NEW\_NAME <KeywordsN.clean.html#new-name>`__ for a useful example!
+:ref:`basic-b`,
+:ref:`basic-l`,
+:ref:`basic-w`. See
+:ref:`new-name` for a useful example!
 
-`BASIC\_POINTER <KeywordsB.clean.html#basic-pointer>`__ is the same as this
+:ref:`basic-pointer` is the same as this
 function.
 
-`\_NAME$ <Keywords_.clean.html#-name>`__ and
-`BASIC\_NAME$ <KeywordsB.clean.html#basic-name>`__ allow you to access the
+:ref:`-name-dlr` and
+:ref:`basic-name-dlr` allow you to access the
 SuperBASIC name list safely.
 
 --------------
 
+
+..  _basic-b:
+
 BASIC\_B
 ========
 
+See :ref:`basic-l` below.
+
+
+..  _basic-w:
 
 BASIC\_W
 ========
 
+See :ref:`basic-l` below.
+
+
+..  _basic-l:
 
 BASIC\_L
 ========
 
 +----------+-------------------------------------------------------------------+
-| Syntax   | BASIC\_B (offset) and                                             |
-|          | BASIC\_W (offset)                                                 |
-|          | BASIC\_L (offset)                                                 |
+| Syntax   || BASIC\_B (offset) and                                            |
+|          || BASIC\_W (offset)                                                |
+|          || BASIC\_L (offset)                                                |
 +----------+-------------------------------------------------------------------+
-| Location |  TinyToolkit, BTool, Turbo Toolkit (BASIC\_L only)                |
+| Location ||  TinyToolkit, BTool, Turbo Toolkit (BASIC\_L only)               |
 +----------+-------------------------------------------------------------------+
 
 These three functions are modified version of PEEK which return values
@@ -155,39 +170,50 @@ supports SMS SBASICs.
 
 **CROSS-REFERENCE**
 
-`PEEK <KeywordsP.clean.html#peek>`__, `PEEK\_W <KeywordsP.clean.html#peek-w>`__,
-`PEEK\_L <KeywordsP.clean.html#peek-l>`__, `BASICP <KeywordsB.clean.html#basicp>`__.
+:ref:`peek`, :ref:`peek-w`,
+:ref:`peek-l`, :ref:`basicp`.
 
-`BASIC\_B% <KeywordsB.clean.html#basic-b>`__, `BASIC\_W% <KeywordsB.clean.html#basic-w>`__,
-`BPEEK% <KeywordsB.clean.html#bpeek>`__,
-`BPEEK\_W <KeywordsB.clean.html#bpeek-w>`__\ % and
-`BPEEK\_L <KeywordsB.clean.html#bpeek-l>`__ are similar.
+:ref:`basic-b-pct`, :ref:`basic-w-pct`,
+:ref:`bpeek-pct`,
+:ref:`bpeek-w-pct` and
+:ref:`bpeek-l` are similar.
 
-See also `BASIC\_F <KeywordsB.clean.html#basic-f>`__ and
-`PEEK\_F <KeywordsP.clean.html#peek-f>`__.
+See also :ref:`basic-f` and
+:ref:`peek-f`.
 
 The SuperBASIC variables appear in the QDOS/SMS Reference Manual
 (Section 18.3)
 
 --------------
 
+
+..  _basic-b-pct:
+
 BASIC\_B%
 =========
 
+See :ref:`basic-f` below.
 
-BASIC\_F
-========
 
+..  _basic-w-pct:
 
 BASIC\_W%
 =========
 
+See :ref:`basic-f` below.
+
+
+..  _basic-f:
+
+BASIC\_F
+========
+
 +----------+-------------------------------------------------------------------+
-| Syntax   | BASIC\_B% (offset) and                                            |
-|          | BASIC\_W% (offset) and                                            |
-|          | BASIC\_F (offset)                                                 |
+| Syntax   || BASIC\_B% (offset) and                                           |
+|          || BASIC\_W% (offset) and                                           |
+|          || BASIC\_F (offset)                                                |
 +----------+-------------------------------------------------------------------+
-| Location | Turbo Toolkit, BTool, Turbo Toolkit (BASIC_L only)                |
+| Location || Turbo Toolkit, BTool, Turbo Toolkit (BASIC_L only)               |
 +----------+-------------------------------------------------------------------+
 
 The functions BASIC\_B% and BASIC\_W% are similar to BASIC\_B and
@@ -206,11 +232,14 @@ supports SMS SBASICs.
 
 **CROSS-REFERENCE**
 
-Refer to `BASIC\_B <KeywordsB.clean.html#basic-b>`__ and
-`BASIC\_W <KeywordsB.clean.html#basic-w>`__. `PEEK\_F <KeywordsP.clean.html#peek-f>`__
-is similar to `BASIC\_F <KeywordsB.clean.html#basic-f>`__.
+Refer to :ref:`basic-b` and
+:ref:`basic-w`. :ref:`peek-f`
+is similar to :ref:`basic-f`.
 
 --------------
+
+
+..  _basic-index-pct:
 
 BASIC\_INDEX%
 =============
@@ -238,10 +267,13 @@ file supports SMS SBASICs.
 
 **CROSS-REFERENCE**
 
-Refer to `LOOKUP% <KeywordsL.clean.html#lookup>`__ and
-`BASIC\_NAME$ <KeywordsB.clean.html#basic-name>`__.
+Refer to :ref:`lookup-pct` and
+:ref:`basic-name-dlr`.
 
 --------------
+
+
+..  _basic-name-dlr:
 
 BASIC\_NAME$
 ============
@@ -269,10 +301,13 @@ file supports SMS SBASICs.
 
 **CROSS-REFERENCE**
 
-Refer to `\_NAME$ <Keywords_.clean.html#-name>`__ and
-`BASIC\_INDEX% <KeywordsB.clean.html#basic-index>`__.
+Refer to :ref:`-name-dlr` and
+:ref:`basic-index-pct`.
 
 --------------
+
+
+..  _basic-pointer:
 
 BASIC\_POINTER
 ==============
@@ -296,9 +331,12 @@ of this file supports SMS SBASICs.
 
 **CROSS-REFERENCE**
 
-Refer to `BASICP <KeywordsB.clean.html#basicp>`__.
+Refer to :ref:`basicp`.
 
 --------------
+
+
+..  _basic-type-pct:
 
 BASIC\_TYPE%
 ============
@@ -333,11 +371,14 @@ file supports SMS SBASICs.
 
 **CROSS-REFERENCE**
 
-`TYPE <KeywordsT.clean.html#type>`__ is similar.
+:ref:`type` is similar.
 
-See also `BASIC\_NAME$ <KeywordsB.clean.html#basic-name>`__.
+See also :ref:`basic-name-dlr`.
 
 --------------
+
+
+..  _bat:
 
 BAT
 ===
@@ -356,11 +397,14 @@ redefined.
 
 **CROSS-REFERENCE**
 
-See `BAT\_USE <KeywordsB.clean.html#bat-use>`__ for an example.
+See :ref:`bat-use` for an example.
 
-Refer to `TYPE\_IN <KeywordsT.clean.html#type-in>`__ also.
+Refer to :ref:`type-in` also.
 
 --------------
+
+
+..  _bat-dlr:
 
 BAT$
 ====
@@ -377,10 +421,13 @@ with the BAT\_USE command.
 
 **CROSS-REFERENCE**
 
-See `BAT\_USE <KeywordsB.clean.html#bat-use>`__ and
-`BAT <KeywordsB.clean.html#bat>`__ for more details.
+See :ref:`bat-use` and
+:ref:`bat` for more details.
 
 --------------
+
+
+..  _bat-use:
 
 BAT\_USE
 ========
@@ -408,25 +455,29 @@ The command BAT will now reset the standard start-up windows.
 
 **CROSS-REFERENCE**
 
-`BAT <KeywordsB.clean.html#bat>`__ executes the batch string set with
-`BAT\_USE <KeywordsB.clean.html#bat-use>`__.
+:ref:`bat` executes the batch string set with
+:ref:`bat-use`.
 
 See
-`FORCE\_TYPE <KeywordsF.clean.html#force-type>`__,\ `STAMP <KeywordsS.clean.html#stamp>`__
-and `TYPE\_IN <KeywordsT.clean.html#type-in>`__ also.
+:ref:`force-type`,\ :ref:`stamp`
+and :ref:`type-in` also.
 
-`DO <KeywordsD.clean.html#do>`__ allows batch files of any size to be
+:ref:`do` allows batch files of any size to be
 executed.
 
 --------------
+
+
+..  _baud:
 
 BAUD
 ====
 
 +----------+-------------------------------------------------------------------+
-| Syntax   |  BAUD bps  or BAUD [port,] bps(SMS and ST/QL only)                |
+| Syntax   || BAUD bps  or                                                     |
+|          || BAUD [port,] bps(SMS and ST/QL only)                             |
 +----------+-------------------------------------------------------------------+
-| Location |  QL ROM                                                           |
+| Location || QL ROM                                                           |
 +----------+-------------------------------------------------------------------+
 
 The serial port(s) use a certain speed to communicate with printers,
@@ -677,14 +728,17 @@ then the BAUD command will not affect that port.
 **CROSS-REFERENCE**
 
 The Devices Appendix supplies details about the serial device ser and
-parallel device par. `SER\_ <KeywordsS.clean.html#ser>`__ ... and
-`PAR\_ <KeywordsP.clean.html#par>`__ ... commands allow you to set various
+parallel device par. The ser\_... and
+par\_... commands allow you to set various
 other parameters for serial and parallel ports.
 
 You can check the current baud rate setting with
-`BAUDRATE <KeywordsB.clean.html#baudrate>`__.
+:ref:`baudrate`.
 
 --------------
+
+
+..  _baudrate:
 
 BAUDRATE
 ========
@@ -701,9 +755,12 @@ used on any newly opened serial port channel.
 
 **CROSS-REFERENCE**
 
-The system's baud rate is set with `BAUD <KeywordsB.clean.html#baud>`__.
+The system's baud rate is set with :ref:`baud`.
 
 --------------
+
+
+..  _bclear:
 
 BCLEAR
 ======
@@ -760,19 +817,22 @@ that disk (y/n) ?"
 **CROSS-REFERENCE**
 
 The current keyboard queue can be selected by a dummy
-`INKEY$ <KeywordsI.clean.html#inkey>`__ or `PEND <KeywordsP.clean.html#pend>`__.
+:ref:`inkey-dlr` or :ref:`pend`.
 
 --------------
+
+
+..  _beep:
 
 BEEP
 ====
 
-+----------+----------------------------------------------------------------------------+
-| Syntax   | BEEP length, pitch [,pitch\_2, grd\_x, grd\_y [,wrap [,fuzz [,rndom ]]]] or|
-|          | BEEP                                                                       |
-+----------+----------------------------------------------------------------------------+
-| Location : QL ROM                                                                     |
-+----------+----------------------------------------------------------------------------+
++----------+-----------------------------------------------------------------------------+
+| Syntax   || BEEP length, pitch [,pitch\_2, grd\_x, grd\_y [,wrap [,fuzz [,rndom ]]]] or|
+|          || BEEP                                                                       |
++----------+-----------------------------------------------------------------------------+
+| Location || QL ROM                                                                     |
++----------+-----------------------------------------------------------------------------+
 
 This command allows you to access the QL's rather poor sound generation
 chip. It can be extremely difficult to use this command, and a lot of
@@ -895,14 +955,17 @@ replacement co-processor Hermes.
 
 **CROSS-REFERENCE**
 
-`BEEPING <KeywordsB.clean.html#beeping>`__ allows you to check if a sound is
+:ref:`beeping` allows you to check if a sound is
 currently being emitted.
 
-`PAUSE <KeywordsP.clean.html#pause>`__ allows you to specify a time interval
+:ref:`pause` allows you to specify a time interval
 during which the computer will wait (allowing you to play much longer
 notes).
 
 --------------
+
+
+..  _beeping:
 
 BEEPING
 =======
@@ -942,9 +1005,12 @@ This function did not work correctly on Minerva before v1.98.
 
 **CROSS-REFERENCE**
 
-`BEEP <KeywordsB.clean.html#beep>`__ activates the speaker.
+:ref:`beep` activates the speaker.
 
 --------------
+
+
+..  _bell:
 
 BELL
 ====
@@ -960,10 +1026,13 @@ This command produces the sound of a ringing phone.
 
 **CROSS-REFERENCE**
 
-`SND\_EXT <KeywordsS.clean.html#snd-ext>`__, `SHOOT <KeywordsS.clean.html#shoot>`__,
-`EXPLODE <KeywordsE.clean.html#explode>`__.
+:ref:`snd-ext`, :ref:`shoot`,
+:ref:`explode`.
 
 --------------
+
+
+..  _beule-ext:
 
 Beule\_EXT
 ==========
@@ -991,13 +1060,16 @@ the toolkit is loaded). This may crash the system.
 
 **CROSS-REFERENCE**
 
-`TK2\_EXT <KeywordsT.clean.html#tk2-ext>`__ and
-`TINY\_EXT <KeywordsT.clean.html#tiny-ext>`__ do the same for Toolkit II and
+:ref:`tk2-ext` and
+:ref:`tiny-ext` do the same for Toolkit II and
 TinyToolkit keywords.
 
-See also `ATARI\_EXT <KeywordsA.clean.html#atari-ext>`__.
+See also :ref:`atari-ext`.
 
 --------------
+
+
+..  _bgcolour-ql:
 
 BGCOLOUR\_QL
 ============
@@ -1028,15 +1100,18 @@ BGCOLOUR\_QL 2,7 - sets a red and white checkerboard pattern.
 
 **CROSS-REFERENCE**
 
-Refer to Appendix 16 and `INK <KeywordsI.clean.html#ink>`__ for more details
+Refer to Appendix 16 and :ref:`ink` for more details
 on colours.
 
-`BGCOLOUR\_24 <KeywordsB.clean.html#bgcolour-24>`__ is similar.
+:ref:`bgcolour-24` is similar.
 
-`BGIMAGE <KeywordsB.clean.html#bgimage>`__ may be used to set a screen image
+:ref:`bgimage` may be used to set a screen image
 as the wallpaper.
 
 --------------
+
+
+..  _bgcolour-24:
 
 BGCOLOUR\_24
 ============
@@ -1066,25 +1141,28 @@ and Shocking Pink.
 
 **CROSS-REFERENCE**
 
-Refer to Appendix 16 and `INK <KeywordsI.clean.html#ink>`__ for more details
+Refer to Appendix 16 and :ref:`ink` for more details
 on colours.
 
-`BGCOLOUR\_QL <KeywordsB.clean.html#bgcolour-ql>`__ gives more detail.
+:ref:`bgcolour-ql` gives more detail.
 
-`BGIMAGE <KeywordsB.clean.html#bgimage>`__ may be used to set a screen image
+:ref:`bgimage` may be used to set a screen image
 as the wallpaper.
 
 --------------
 
+
+..  _bget:
+
 BGET
 ====
 
-+----------+---------------------------------------------------------------------------+
-| Syntax   | BGET [#ch\\position,] [item :sup:`\*`\ [,item\ :sup:`i`]\ :sup:`\*` ..] or|
-|          | BGET [#ch,] [item                                                         |
-+----------+---------------------------------------------------------------------------+
-| Location | Toolkit II, THOR XVI                                                      |
-+----------+---------------------------------------------------------------------------+
++----------+----------------------------------------------------------------------------+
+| Syntax   || BGET [#ch\\position,] [item :sup:`\*`\ [,item\ :sup:`i`]\ :sup:`\*` ..] or|
+|          || BGET [#ch,] [item                                                         |
++----------+----------------------------------------------------------------------------+
+| Location || Toolkit II, THOR XVI                                                      |
++----------+----------------------------------------------------------------------------+
 
 This command is very similar to GET, although this only fetches one byte
 at a time (in the range 0..255) from the given channel (default #3).
@@ -1137,17 +1215,20 @@ the sub-string would not be valid!!
 
 **CROSS-REFERENCE**
 
-See `BPUT <KeywordsB.clean.html#bput>`__, `PUT <KeywordsP.clean.html#put>`__,
-`GET <KeywordsG.clean.html#get>`__. `FPOS <KeywordsF.clean.html#fpos>`__ allows you
+See :ref:`bput`, :ref:`put`,
+:ref:`get`. :ref:`fpos` allows you
 to find out the current file position.
-`TRUNCATE <KeywordsT.clean.html#truncate>`__ allows you to truncate a file to
-the current file position. `PEEK <KeywordsP.clean.html#peek>`__ fetches one
+:ref:`truncate` allows you to truncate a file to
+the current file position. :ref:`peek` fetches one
 byte from memory.
 
-`OPEN\_DIR <KeywordsO.clean.html#open-dir>`__ contains an example of the use
-of `BGET <KeywordsB.clean.html#bget>`__.
+:ref:`open-dir` contains an example of the use
+of :ref:`bget`.
 
 --------------
+
+
+..  _bgimage:
 
 BGIMAGE
 =======
@@ -1183,18 +1264,21 @@ when the screen was saved will result in a corrupt image.
 
 **CROSS-REFERENCE**
 
-`SBYTES <KeywordsS.clean.html#sbytes>`__ gives details on how to store a
+:ref:`sbytes` gives details on how to store a
 screen on disk.
 
 In many ways, this command is similar to
-`LOADPIC <KeywordsL.clean.html#loadpic>`__, except that it caters for
+:ref:`loadpic`, except that it caters for
 non-standard QL resolutions and colour depths.
 
-`BGCOLOUR\_QL <KeywordsB.clean.html#bgcolour-ql>`__ and
-`BGCOLOUR\_24 <KeywordsB.clean.html#bgcolour-24>`__ can be used to set a
+:ref:`bgcolour-ql` and
+:ref:`bgcolour-24` can be used to set a
 single colour wallpaper.
 
 --------------
+
+
+..  _bicop:
 
 BICOP
 =====
@@ -1217,19 +1301,23 @@ It will only work on a standard 512x256 screen stored at $20000.
 
 **CROSS-REFERENCE**
 
-`SDUMP <KeywordsS.clean.html#sdump>`__ is more flexible.
+:ref:`sdump` is more flexible.
 
-See also `HCO <KeywordsH.clean.html#hco>`__ and `FCO <KeywordsF.clean.html#fco>`__.
+See also :ref:`hco` and :ref:`fco`.
 
 --------------
+
+
+..  _bin:
 
 BIN
 ===
 
 +----------+-------------------------------------------------------------------+
-| Syntax   |  BIN (binary$)  or BIN (binary) where binary=0..111111            |
+| Syntax   || BIN (binary$)  or                                                |
+|          || BIN (binary) where binary=0..111111                              |
 +----------+-------------------------------------------------------------------+
-| Location |  Toolkit II, THOR XVI                                             |
+| Location || Toolkit II, THOR XVI                                             |
 +----------+-------------------------------------------------------------------+
 
 This function returns the decimal value of a binary number (given as a
@@ -1275,24 +1363,26 @@ Any digit other than 0 or 1 will produce odd results.
 
 **CROSS-REFERENCE**
 
-`BIN$ <KeywordsB.clean.html#bin>`__ works the other way around, converting
+:ref:`bin-dlr` works the other way around, converting
 decimal numbers into their binary equivalent. See
-`HEX <KeywordsH.clean.html#hex>`__ and `HEX$ <KeywordsH.clean.html#hex>`__ for the
-hexadecimal versions. `BIT% <KeywordsB.clean.html#bit>`__ is also useful.
+:ref:`hex` and :ref:`hex-dlr` for the
+hexadecimal versions. :ref:`bit-pct` is also useful.
 
-SMS users can achieve the same thing by using, for example `PRINT
-%1001 <KeywordsP.clean.html#print201001>`__ instead of `PRINT BIN
-('1001') <KeywordsP.clean.html#print20bin20('1001')>`__.
+SMS users can achieve the same thing by using, for example :ref:`print`\ %1001 instead of :ref:`print`\ BIN('1001').
 
 --------------
+
+
+..  _bin-dlr:
 
 BIN$
 ====
 
 +----------+-------------------------------------------------------------------+
-| Syntax   |  BIN$ (decimal,digits)  or BIN$ (decimal [,digits]) (THOR only)   |
+| Syntax   || BIN$ (decimal,digits)  or                                        |
+|          || BIN$ (decimal [,digits]) (THOR only)                             |
 +----------+-------------------------------------------------------------------+
-| Location |  Toolkit II, THOR XVI                                             |
+| Location || Toolkit II, THOR XVI                                             |
 +----------+-------------------------------------------------------------------+
 
 This function converts a signed integer decimal number to the equivalent
@@ -1344,11 +1434,14 @@ than on v6.41 of the THOR XVI.
 
 **CROSS-REFERENCE**
 
-See `BIN <KeywordsB.clean.html#bin>`__ and `HEX <KeywordsH.clean.html#hex>`__,
-`HEX$ <KeywordsH.clean.html#hex>`__. Also refer to
-`BIT% <KeywordsB.clean.html#bit>`__.
+See :ref:`bin` and :ref:`hex`,
+:ref:`hex-dlr`. Also refer to
+:ref:`bit-pct`.
 
 --------------
+
+
+..  _binom:
 
 BINOM
 =====
@@ -1402,15 +1495,12 @@ BINOM (n,k) = BINOM (n,n-k) which saves half of the loops:
 
 **CROSS-REFERENCE**
 
-`FACT <KeywordsF.clean.html#fact>`__
-
-` <KeywordsF.clean.html#fact>`__
-
-` <KeywordsF.clean.html#fact>`__
-
-` <KeywordsF.clean.html#fact>`__
+:ref:`fact`\ .
 
 --------------
+
+
+..  _bit-pct:
 
 BIT%
 ====
@@ -1476,14 +1566,17 @@ set.
 
 **CROSS-REFERENCE**
 
-`BIN$ <KeywordsB.clean.html#bin>`__ also converts a decimal number to a
-binary and `BIN <KeywordsB.clean.html#bin>`__ back again.
-`UPPER$ <KeywordsU.clean.html#upper>`__ returns a string in upper characters.
+:ref:`bin-dlr` also converts a decimal number to a
+binary and :ref:`bin` back again.
+:ref:`upper-dlr` returns a string in upper characters.
 
-The length of a number x in binary form is `INT (LOG2 (ABS
-(x))+1) <KeywordsI.clean.html#int20(log220(abs20(x))+1)>`__.
+The length of a number x in binary form is :ref:`int`\ (LOG2 (ABS
+(x))+1) .
 
 --------------
+
+
+..  _bld:
 
 BLD
 ===
@@ -1507,16 +1600,19 @@ LPRINT "I " & BLD&"hate"&NRM & " these functions."
 
 **CROSS-REFERENCE**
 
-`NORM <KeywordsN.clean.html#norm>`__, `EL <KeywordsE.clean.html#el>`__,
-`DBL <KeywordsD.clean.html#dbl>`__, `ENL <KeywordsE.clean.html#enl>`__,
-`PRO <KeywordsP.clean.html#pro>`__, `SI <KeywordsS.clean.html#si>`__,
-`NRM <KeywordsN.clean.html#nrm>`__, `UNL <KeywordsU.clean.html#unl>`__,
-`ALT <KeywordsA.clean.html#alt>`__, `ESC <KeywordsE.clean.html#esc>`__,
-`FF <KeywordsF.clean.html#ff>`__, `LMAR <KeywordsL.clean.html#lmar>`__,
-`RMAR <KeywordsR.clean.html#rmar>`__, `PAGDIS <KeywordsP.clean.html#pagdis>`__,
-`PAGLEN <KeywordsP.clean.html#paglen>`__.
+:ref:`norm`, :ref:`el`,
+:ref:`dbl`, :ref:`enl`,
+:ref:`pro`, :ref:`si`,
+:ref:`nrm`, :ref:`unl`,
+:ref:`alt`, :ref:`esc`,
+:ref:`ff`, :ref:`lmar`,
+:ref:`rmar`, :ref:`pagdis`,
+:ref:`paglen`.
 
 --------------
+
+
+..  _block:
 
 BLOCK
 =====
@@ -1604,10 +1700,13 @@ BLOCK 180,1,0,255,7
 
 **CROSS-REFERENCE**
 
-`INK <KeywordsI.clean.html#ink>`__ contains information concerning composite
+:ref:`ink` contains information concerning composite
 colours.
 
 --------------
+
+
+..  _blook:
 
 BLOOK
 =====
@@ -1622,6 +1721,9 @@ See SEARCH but note the different syntax. The string being looked for by
 BLOOK is not case-sensitive.
 
 --------------
+
+
+..  _bls:
 
 BLS
 ===
@@ -1643,9 +1745,12 @@ Pressing a key or moving the mouse will reactivate the screen.
 
 **CROSS-REFERENCE**
 
-See `A\_BLANK <KeywordsA.clean.html#a-blank>`__.
+See :ref:`a-blank`.
 
 --------------
+
+
+..  _bmove:
 
 BMOVE
 =====
@@ -1682,27 +1787,30 @@ to crash.
 
 **CROSS-REFERENCE**
 
-It is a good idea to check with `VER$ <KeywordsV.clean.html#ver>`__ if
+It is a good idea to check with :ref:`ver-dlr` if
 Minerva is present and use its extremely fast MM.MOVE machine code trap
-via `CALL <KeywordsC.clean.html#call>`__ as an alternative to
-`BMOVE <KeywordsB.clean.html#bmove>`__; this is demonstrated by the example at
-`LDRAW <KeywordsL.clean.html#ldraw>`__.
+via :ref:`call` as an alternative to
+:ref:`bmove`; this is demonstrated by the example at
+:ref:`ldraw`.
 
-`COPY\_B <KeywordsC.clean.html#copy-b>`__,
-`TTPOKEM <KeywordsT.clean.html#ttpokem>`__,
-`COPY\_W <KeywordsC.clean.html#copy-w>`__ and
-`COPY\_L <KeywordsC.clean.html#copy-l>`__ also allow you to move memory.
+:ref:`copy-b`,
+:ref:`ttpokem`,
+:ref:`copy-w` and
+:ref:`copy-l` also allow you to move memory.
 
 --------------
+
+
+..  _border:
 
 BORDER
 ======
 
 +----------+------------------------------------------------------------------+
-| Syntax   | BORDER [#channel,] size [,colour] or                             |
-|          | BORDER [#channel] Location: QL ROM                               |
+| Syntax   || BORDER [#channel,] size [,colour] or                            |
+|          || BORDER [#channel] Location: QL ROM                              |
 +----------+------------------------------------------------------------------+
-| Location | QL ROM                                                           |
+| Location || QL ROM                                                          |
 +----------+------------------------------------------------------------------+
 
 This command allows you to add a coloured border around the inside of
@@ -1781,29 +1889,40 @@ The second syntax will not work on Minerva (pre v1.79) and the THOR XVI
 
 **CROSS-REFERENCE**
 
-`INK <KeywordsI.clean.html#ink>`__ describes composite colours.
+:ref:`ink` describes composite colours.
 
-Also see `WINDOW <KeywordsW.clean.html#window>`__.
+Also see :ref:`window`.
 
 --------------
+
+
+..  _bpeek-pct:
 
 BPEEK%
 ======
 
+See :ref:`bpeek-l` below.
+
+
+..  _bpeek-w-pct:
 
 BPEEK\_W%
 =========
 
+See :ref:`bpeek-l` below.
+
+
+..  _bpeek-l:
 
 BPEEK\_L
 ========
 
 +----------+---------------------------------------+
-| Syntax   | BPEEK% (offset)    and                |
-|          | BPEEK\_W% (offset) and                |
-|          | BPEEK\_L (offset)                     |
+| Syntax   || BPEEK% (offset)    and               |
+|          || BPEEK\_W% (offset) and               |
+|          || BPEEK\_L (offset)                    |
 +----------+---------------------------------------+
-| Location | BPEEKS, BPOKE (DIY Toolkit - Vol B)   |
+| Location || BPEEKS, BPOKE (DIY Toolkit - Vol B)  |
 +----------+---------------------------------------+
 
 These three functions are exactly the same as BASIC\_B, BASIC\_W and
@@ -1814,27 +1933,40 @@ on a Multiple BASIC interpreter.
 
 **CROSS-REFERENCE**
 
-See `BASIC\_W <KeywordsB.clean.html#basic-w>`__ and
-`BASIC <KeywordsB.clean.html#basic>`__.
+See :ref:`basic-w` and
+:ref:`basic`.
 
-`BPOKE <KeywordsB.clean.html#bpoke>`__ and related commands allow you to alter
+:ref:`bpoke` and related commands allow you to alter
 the values of the SuperBASIC variables.
+
+
+..  _bpoke:
 
 BPOKE
 =====
 
+See :ref:`bpoke-l` below.
+
+
+..  _bpoke-w:
+
 BPOKE\_W
 ========
+
+See :ref:`bpoke-l` below.
+
+
+..  _bpoke-l:
 
 BPOKE\_L
 ========
 
 +----------+---------------------------------+
-| Syntax   | BPOKE offset, value   and       |
-|          | BPOKE\_W offset, value          |
-|          | BPOKE\_L offset, value          |
+| Syntax   || BPOKE offset, value   and      |
+|          || BPOKE\_W offset, value         |
+|          || BPOKE\_L offset, value         |
 +----------+---------------------------------+
-| Location | BPOKE (DIY Toolkit - Vol B)     |
+| Location || BPOKE (DIY Toolkit - Vol B)    |
 +----------+---------------------------------+
 
 These three commands allow you to alter the value of SuperBASIC
@@ -1850,22 +1982,25 @@ interpreter.
 
 **CROSS-REFERENCE**
 
-See `POKE <KeywordsP.clean.html#poke>`__.
+See :ref:`poke`.
 
-`BPEEK% <KeywordsB.clean.html#bpeek>`__ and related commands allow you to
+:ref:`bpeek-pct` and related commands allow you to
 read the values of the SuperBASIC variables.
 
 --------------
 
+
+..  _bput:
+
 BPUT
 ====
 
-+----------+---------------------------------------------------------------------------+
-| Syntax   | BPUT [#ch\\position,] [item :sup:`\*`\ [,item\ :sup:`i`]\ :sup:`\*` ..] or|
-|          | BPUT [#ch,] [item                                                         |
-+----------+---------------------------------------------------------------------------+
-| Location | Toolkit II, THOR XVI                                                      |
-+----------+---------------------------------------------------------------------------+
++----------+----------------------------------------------------------------------------+
+| Syntax   || BPUT [#ch\\position,] [item :sup:`\*`\ [,item\ :sup:`i`]\ :sup:`\*` ..] or|
+|          || BPUT [#ch,] [item                                                         |
++----------+----------------------------------------------------------------------------+
+| Location || Toolkit II, THOR XVI                                                      |
++----------+----------------------------------------------------------------------------+
 
 This command is the complement to BGET, in that it places the byte value
 for each item into the specified channel (default #3) at the current
@@ -1922,37 +2057,46 @@ is equivalent to: BPUT #2,72,101,108,108,111
 
 **CROSS-REFERENCE**
 
-See `FGETB <KeywordsF.clean.html#fgetb>`__, `BPUT <KeywordsB.clean.html#bput>`__,
-`PUT <KeywordsP.clean.html#put>`__, `GET <KeywordsG.clean.html#get>`__,
-`LPUT <KeywordsL.clean.html#lput>`__, `UPUT <KeywordsU.clean.html#uput>`__ and
-`WPUT <KeywordsW.clean.html#wput>`__.
+See :ref:`fgetb`, :ref:`bput`,
+:ref:`put`, :ref:`get`,
+:ref:`lput`, :ref:`uput` and
+:ref:`wput`.
 
-`FPOS <KeywordsF.clean.html#fpos>`__ allows you to find the current file
+:ref:`fpos` allows you to find the current file
 position.
 
-`TRUNCATE <KeywordsT.clean.html#truncate>`__ allows you to truncate a file to
+:ref:`truncate` allows you to truncate a file to
 the current file position.
 
-`PEEK <KeywordsP.clean.html#peek>`__ fetches one byte from memory.
+:ref:`peek` fetches one byte from memory.
 
-`UPUT <KeywordsU.clean.html#uput>`__ allows you to send bytes without them
+:ref:`uput` allows you to send bytes without them
 being translated.
 
 
 --------------
 
 
+
+..  _break-on:
+
 BREAK\_ON
 =========
+
+See :ref:`break-off` below.
+
+
+
+..  _break-off:
 
 BREAK\_OFF
 ==========
 
 +----------+---------------+
-| Syntax   | BREAK\_ON     |
-|          | BREAK\_OFF    |
+| Syntax   || BREAK\_ON    |
+|          || BREAK\_OFF   |
 +----------+---------------+
-| Location | TinyToolkit   |
+| Location || TinyToolkit  |
 +----------+---------------+
 
 The command BREAK\_OFF de-activates the functioning of both
@@ -1984,11 +2128,14 @@ BREAK\_OFF does not currently work with SMS.
 
 **CROSS-REFERENCE**
 
-`STOP <KeywordsS.clean.html#stop>`__ terminates interpreted programs even if
+:ref:`stop` terminates interpreted programs even if
 the Break Key is disabled. Do not confuse with the command
-`BREAK <KeywordsB.clean.html#break>`__.
+:ref:`break`.
 
 --------------
+
+
+..  _break:
 
 BREAK
 =====
@@ -2039,15 +2186,18 @@ This command does not work under SMS.
 
 **CROSS-REFERENCE**
 
-See also `BREAK% <KeywordsB.clean.html#break>`__,
-`FREEZE <KeywordsF.clean.html#freeze>`__ and
-`FREEZE% <KeywordsF.clean.html#freeze>`__.
+See also :ref:`break-pct`,
+:ref:`freeze` and
+:ref:`freeze-pct`.
 
-Do not confuse BTool's command `BREAK <KeywordsB.clean.html#break>`__ with
-TinyToolkit's function `BREAK <KeywordsB.clean.html#break>`__ (although you
+Do not confuse BTool's command :ref:`break` with
+TinyToolkit's function :ref:`break` (although you
 can use both in the same program!)
 
 --------------
+
+
+..  _break-pct:
 
 BREAK%
 ======
@@ -2064,9 +2214,12 @@ key is enabled, either ON or OFF.
 
 **CROSS-REFERENCE**
 
-See `BREAK <KeywordsB.clean.html#break>`__!!
+See :ref:`break`!!
 
 --------------
+
+
+..  _btool-ext:
 
 BTool\_EXT
 ==========
@@ -2089,9 +2242,12 @@ into the common heap - this is most likely to happen on later versions
 of Toolkit II where LRESPR uses the common heap if jobs are running. Try
 LINKUP instead.
 
-See also `KILL <KeywordsK.clean.html#kill>`__ which removes all current jobs.
+See also :ref:`kill` which removes all current jobs.
 
 --------------
+
+
+..  _btool-rmv:
 
 BTool\_RMV
 ==========
@@ -2107,6 +2263,9 @@ the SuperBASIC name list. The Toolkit itself remains in memory and can
 be re-activated with BTool\_EXT.
 
 --------------
+
+
+..  _btrap:
 
 BTRAP
 =====
@@ -2131,15 +2290,15 @@ know what you are doing!
 
 **CROSS-REFERENCE**
 
-See `IO\_TRAP <KeywordsI.clean.html#io-trap>`__,
-`MTRAP <KeywordsM.clean.html#mtrap>`__ and `QTRAP <KeywordsQ.clean.html#qtrap>`__.
+See :ref:`io-trap`,
+:ref:`mtrap` and :ref:`qtrap`.
 
 Any return parameters can be read with
-`DATAREG <KeywordsD.clean.html#datareg>`__ and
-`ADDREG <KeywordsA.clean.html#addreg>`__.
+:ref:`datareg` and
+:ref:`addreg`.
 
-`CLS <KeywordsC.clean.html#cls>`__, `PAN <KeywordsP.clean.html#pan>`__ and
-`SCROLL <KeywordsS.clean.html#scroll>`__ can also be used to call TRAP #3.
+:ref:`cls`, :ref:`pan` and
+:ref:`scroll` can also be used to call TRAP #3.
 
 Refer to the QDOS/SMS Reference Manual (Section 15) for details of the
 various system TRAP #3 calls.
@@ -2147,6 +2306,9 @@ various system TRAP #3 calls.
 Also refer to the DIY Toolkit documentation for this command.
 
 --------------
+
+
+..  _button-pct:
 
 BUTTON%
 =======
@@ -2196,11 +2358,14 @@ at the same time:
     
 **CROSS-REFERENCE**
 
-`X\_PTR% <KeywordsX.clean.html#x-ptr>`__, `Y\_PTR% <KeywordsY.clean.html#y-ptr>`__
-and `PTR\_FN% <KeywordsP.clean.html#ptr-fn>`__ can also be used to
+:ref:`x-ptr-pct`, :ref:`y-ptr-pct`
+and :ref:`ptr-fn-pct` can also be used to
 interrogate the mouse.
 
 --------------
+
+
+..  _bver-dlr:
 
 BVER$
 =====
@@ -2214,3 +2379,37 @@ BVER$
 This function returns the version number of the Beule Toolkit. This may
 be useful if a program makes use of commands or functions which were not
 supported by older versions.
+
+-------
+
+
+..  _bytes-free:
+
+BYTES\_FREE
+===========
+
++----------+-------------------------------------------------------------------+
+| Syntax   | memory = BYTES\FREE                                               |
++----------+-------------------------------------------------------------------+
+| Location | DJToolkit 1.16                                                    |
++----------+-------------------------------------------------------------------+
+
+This simple function  returns the amount of memory known by the system to be free.  The answer is returned in bytes, see also :ref:`kbytes-free`.  For the technically  minded, the free memory is  considered  to be that  between the addresses held in the system variables SV\_FREE and SV\_BASIC.
+
+**EXAMPLE**
+
+::
+
+    ...
+    2500 freeMemory = BYTES_FREE
+    2510 IF freeMemory < 32 * 1024 THEN
+    2520    REMark Do something here if not enough memory left...
+    2530 END IF
+    ...
+
+
+**CROSS-REFERENCE**
+
+:ref:`kbytes-free`.
+
+

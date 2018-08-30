@@ -1,4 +1,6 @@
-A5 EXPANSION BOARDS
+..  _a5-expansion--boards:
+
+A5 Expansion Boards
 ===================
 
 In this section, we give a brief description of the more common

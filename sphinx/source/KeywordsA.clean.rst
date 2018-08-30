@@ -1,18 +1,26 @@
+
 ==========
 Keywords A
 ==========
 
+TODO
+====
+
+- :ref:`allocation` refers to taskno% and tasktag% in the syntax, but the text mentions taskid%. 
+- There is a reference to the ESC command, in :ref:`alt`, but it's not in the KeywordsE file.
+
+
+..  _abs:
 
 ABS
 ===
 
-+----------+------------------------------------------------------------------------+
-| Syntax   |                                                                        | 
-|          | ABS (number) or                                                        |
-|          | ABS (number1 :sup:`\*`\ [,number\ :sup:`x`]\ :sup:`\*`) (Minerva only) | 
-+----------+------------------------------------------------------------------------+
-| Location |  QL ROM                                                                | 
-+----------+------------------------------------------------------------------------+
++----------+-------------------------------------------------------------------------+
+| Syntax   || ABS (number) or                                                        |
+|          || ABS (number1 :sup:`\*`\ [,number\ :sup:`x`]\ :sup:`\*`) (Minerva only) | 
++----------+-------------------------------------------------------------------------+
+| Location || QL ROM                                                                 | 
++----------+-------------------------------------------------------------------------+
 
 This function returns the absolute value of a number - ie. the positive
 difference (or distance) between zero and the number. The absolute value
@@ -85,11 +93,45 @@ For example, to calculate the length of a diagonal in a standard cube
 
 **CROSS-REFERENCE**
 
-See `SGN <KeywordsS.clean.html#sgn>`__ and `SGN% <KeywordsS.clean.html#sgn%>`__ for
-similar machine code versions of our example function
-`SIGN% <KeywordsS.clean.html#sign%>`__.
+See :ref:`sgn` and :ref:`sgn-pct` for
+similar machine code versions of our example function SIGN% demonstrated above.
 
 --------------
+
+
+..  _abs-position:
+
+ABS\_POSITION
+=============
+
++----------+-------------------------------------------------------------------+
+| Syntax   | ABS\_POSITION #channel, position                                  |
++----------+-------------------------------------------------------------------+
+| Location | DJToolkit 1.16                                                    |
++----------+-------------------------------------------------------------------+
+
+This procedure will set the file pointer to the position given for the file attached to the given channel number. If you attempt to set the position for a screen or some other non-directory device channel, you will get a bad parameter error, as you will if position is negative.
+
+If the position given is 0, the file will be positioned to the start, if the position is a large  number which is greater than the current file size, the position will be set to the end of file and no error will occur.
+
+After an ABS\_POSITION command, all file accesses will take place at the new position.
+
+**EXAMPLE**
+
+::
+
+    1500 REMark Set position to very end, for appending data
+    1510 ABS_POSITION #3, 6e6
+    1520 ...
+
+**CROSS-REFERENCE**
+
+:ref:`move-position`.
+
+-------
+
+
+..  _accel-off:
 
 ACCEL\_OFF
 ==========
@@ -103,6 +145,9 @@ ACCEL\_OFF
 See ACCEL\_ON below!
 
 --------------
+
+
+..  _accel-on:
 
 ACCEL\_ON
 =========
@@ -127,12 +172,15 @@ attached to the Atari ST.
 
 **CROSS-REFERENCE**
 
-`ACCEL\_OFF <KeywordsA.clean.html#accel-off>`__ turns off the 16MHz mode (if
+:ref:`accel-off` turns off the 16MHz mode (if
 possible) and also tells the accelerator board that it should no longer
 use its memory cache. Also see
-`ACCEL\_SET <KeywordsA.clean.html#accel-set>`__.
+:ref:`accel-set`.
 
 --------------
+
+
+..  _accel-set:
 
 ACCEL\_SET
 ==========
@@ -175,11 +223,14 @@ printer board - use the command PAR\_PULSE.
 
 **CROSS-REFERENCE**
 
-See also `ACCEL\_ON <KeywordsA.clean.html#accel-on>`__,
-`ACCEL\_OFF <KeywordsA.clean.html#accel-off>`__ and
-`ACCEL\_STATE <KeywordsA.clean.html#accel-state>`__.
+See also :ref:`accel-on`,
+:ref:`accel-off` and
+:ref:`accel-state`.
 
 --------------
+
+
+..  _accel-state:
 
 ACCEL\_STATE
 ============
@@ -195,10 +246,13 @@ that an accelerator board is enabled. Otherwise, it returns the value 0.
 
 **CROSS-REFERENCE**
 
-`ACCEL\_SET <KeywordsA.clean.html#accel-set>`__ tells the Emulator that an
+:ref:`accel-set` tells the Emulator that an
 accelerator board is enabled.
 
 --------------
+
+
+..  _acopy:
 
 ACOPY
 =====
@@ -221,13 +275,16 @@ ACOPY flp1\_PROGRAM\_BAS, "flp2\_PROGRAM.BAS"
 
 **CROSS-REFERENCE**
 
-`QCOPY <KeywordsQ.clean.html#qcopy>`__ copies a file from an Atari disk to a
+:ref:`qcopy` copies a file from an Atari disk to a
 QL disk.
 
-See `AFORMAT <KeywordsA.clean.html#aformat>`__ and
-`QACONVERT <KeywordsA.clean.html#qaconvert>`__.
+See :ref:`aformat` and
+:ref:`qaconvert`.
 
 --------------
+
+
+..  _acos:
 
 ACOS
 ====
@@ -274,22 +331,26 @@ angle to degrees, use DEG ( ACOS (x) ).
 
 **CROSS-REFERENCE**
 
-`COS <KeywordsC.clean.html#cos>`__, `ASIN <KeywordsA.clean.html#asin>`__,
-`SIN <KeywordsS.clean.html#sin>`__, `RAD <KeywordsR.clean.html#rad>`__.
+:ref:`cos`, :ref:`asin`,
+:ref:`sin`, :ref:`rad`.
 
-Compare `ARCOSH <KeywordsA.clean.html#arcosh>`__.
+Compare :ref:`arcosh`.
 
 Also please see the Mathematics section in the Appendix.
 
 --------------
 
+
+..  _acot:
+
 ACOT
 ====
 
 +----------+-------------------------------------------------------------------+
-| Syntax   |  ACOT (x) or ACOT (y,x) (Minerva v1.90+ only)                     |
+| Syntax   || ACOT (x) or                                                      |
+|          || ACOT (y,x) (Minerva v1.90+ only)                                 |
 +----------+-------------------------------------------------------------------+
-| Location |  QL ROM                                                           |
+| Location || QL ROM                                                           |
 +----------+-------------------------------------------------------------------+
 
 The function ACOT, is the arc-cotangent function, that is to say the
@@ -309,14 +370,17 @@ y=0 which would otherwise give an overflow error.
 
 **CROSS-REFERENCE**
 
-`COT <KeywordsC.clean.html#cot>`__, `ATAN <KeywordsA.clean.html#atan>`__,
-`TAN <KeywordsT.clean.html#tan>`__.
+:ref:`cot`, :ref:`atan`,
+:ref:`tan`.
 
 Please see the Mathematics section in the Appendix.
 
-See also `ARCOTH <KeywordsA.clean.html#arcoth>`__.
+See also :ref:`arcoth`.
 
 --------------
+
+
+..  _adate:
 
 ADATE
 =====
@@ -378,17 +442,20 @@ protected in some way (see PROT\_DATE).
 
 **CROSS-REFERENCE**
 
-`DATE$ <KeywordsD.clean.html#date$>`__ returns the current system date and
-time as a string, `DATE <KeywordsD.clean.html#date>`__ does the same but in a
+:ref:`date-dlr` returns the current system date and
+time as a string, :ref:`date` does the same but in a
 less readable form - in seconds after the initial date.
 
-`SDATE <KeywordsS.clean.html#sdate>`__ sets the clock to an absolute date and
+:ref:`sdate` sets the clock to an absolute date and
 time.
 
 Battery backed clocks generally have their own methods of altering their
 date and time.
 
 --------------
+
+
+..  _addreg:
 
 ADDREG
 ======
@@ -426,13 +493,16 @@ You could replace the ALCHP function with:
 
 **CROSS-REFERENCE**
 
-`DATAREG <KeywordsD.clean.html#datareg>`__ allows you to read machine code
+:ref:`datareg` allows you to read machine code
 data registers.
 
-See `MTRAP <KeywordsM.clean.html#mtrap>`__, `QTRAP <KeywordsQ.clean.html#qtrap>`__
-and `BTRAP <KeywordsB.clean.html#btrap>`__.
+See :ref:`mtrap`, :ref:`qtrap`
+and :ref:`btrap`.
 
 --------------
+
+
+..  _adelete:
 
 ADELETE
 =======
@@ -455,13 +525,16 @@ ADELETE "flp1\_TEST.BAS"
 
 **CROSS-REFERENCE**
 
-See `DELETE <KeywordsD.clean.html#delete>`__!
+See :ref:`delete`!
 
-See `ADIR <KeywordsA.clean.html#adir>`__,
-`AFORMAT <KeywordsA.clean.html#aformat>`__,
-`QACONVERT <KeywordsA.clean.html#qaconvert>`__.
+See :ref:`adir`,
+:ref:`aformat`,
+:ref:`qaconvert`.
 
 --------------
+
+
+..  _adir:
 
 ADIR
 ====
@@ -477,13 +550,16 @@ IBM PS/2 Disks.
 
 **CROSS-REFERENCE**
 
-See `DIR <KeywordsD.clean.html#dir>`__.
+See :ref:`dir`.
 
-Other commands added are `ASTAT <KeywordsA.clean.html#astat>`__,
-`ADELETE <KeywordsA.clean.html#adelete>`__, `ACOPY <KeywordsA.clean.html#acopy>`__
-and `AFORMAT <KeywordsA.clean.html#aformat>`__.
+Other commands added are :ref:`astat`,
+:ref:`adelete`, :ref:`acopy`
+and :ref:`aformat`.
 
 --------------
+
+
+..  _aformat:
 
 AFORMAT
 =======
@@ -503,22 +579,27 @@ making the last character of the filename an asterisk (\*).
 
 **CROSS-REFERENCE**
 
-See `FORMAT <KeywordsF.clean.html#format>`__ and
-`IFORMAT <KeywordsI.clean.html#iformat>`__.
+See :ref:`format` and
+:ref:`iformat`.
 
-Other commands added are `ASTAT <KeywordsA.clean.html#astat>`__,
-`ADELETE <KeywordsA.clean.html#adelete>`__, `ADIR <KeywordsA.clean.html#adir>`__ and
-`ACOPY <KeywordsA.clean.html#acopy>`__.
+Other commands added are :ref:`astat`,
+:ref:`adelete`, :ref:`adir` and
+:ref:`acopy`.
 
 --------------
+
+
+..  _ajob:
 
 AJOB
 ====
 
 +----------+-------------------------------------------------------------------+
-| Syntax   | AJOB jobname,priority or                                          |
-|          | AJOB jobnr,tag,priority or                                        |
-|          | AJOB job\_id,priority                                             |
+| Syntax   || AJOB jobname,priority or                                         |
+|          || AJOB jobnr,tag,priority or                                       |
+|          || AJOB job\_id,priority                                            |
++----------+-------------------------------------------------------------------+
+| Location || Toolkit II                                                       |
 +----------+-------------------------------------------------------------------+
 
 This command forces the specified job (described by either its jobname,
@@ -536,14 +617,17 @@ syntax works.
 
 **CROSS-REFERENCE**
 
-`SJOB <KeywordsS.clean.html#sjob>`__ suspends a job.
+:ref:`sjob` suspends a job.
 
-`REL\_JOB <KeywordsR.clean.html#rel-job>`__ releases a job.
+:ref:`rel-job` releases a job.
 
-`SPJOB <KeywordsS.clean.html#spjob>`__ sets the priority of a job without
+:ref:`spjob` sets the priority of a job without
 restarting it.
 
 --------------
+
+
+..  _alarm:
 
 ALARM
 =====
@@ -574,21 +658,25 @@ and listen to the news on the radio?
 
 **CROSS-REFERENCE**
 
-Set the system clock with `SDATE <KeywordsS.clean.html#sdate>`__, adjust it
-with `ADATE <KeywordsA.clean.html#adate>`__.
+Set the system clock with :ref:`sdate`, adjust it
+with :ref:`adate`.
 
-Alarm jobs can be killed by using `RJOB <KeywordsR.clean.html#rjob>`__ for
+Alarm jobs can be killed by using :ref:`rjob` for
 example.
 
 --------------
+
+
+..  _alchp:
 
 ALCHP
 =====
 
 +----------+-------------------------------------------------------------------+
-| Syntax   |  ALCHP (space) or ALCHP (space [,[jobID]]) (BTool only)           |
+| Syntax   || ALCHP (space) or                                                 |
+|          || ALCHP (space [,[jobID]]) (BTool only)                            |
 +----------+-------------------------------------------------------------------+
-| Location |  Toolkit II, THOR XVI, BTool                                      |
+| Location || Toolkit II, THOR XVI, BTool                                      |
 +----------+-------------------------------------------------------------------+
 
 The function ALCHP allocates space bytes in the common heap and returns
@@ -670,27 +758,30 @@ operating system... crash!
 **CROSS-REFERENCE**
 
 The reserved parts of memory can be given back to QDOS' memory
-management by `RECHP <KeywordsR.clean.html#rechp>`__ base\_address or
-`CLCHP <KeywordsC.clean.html#clchp>`__.
+management by :ref:`rechp` base\_address or
+:ref:`clchp`.
 
-`RESPR <KeywordsR.clean.html#respr>`__, `TTALL <KeywordsT.clean.html#ttall>`__,
-`ALLOCATION <KeywordsA.clean.html#allocation>`__ and especially
-`GRAB <KeywordsG.clean.html#grab>`__ and `RESERVE <KeywordsR.clean.html#reserve>`__
-work similar to `ALCHP <KeywordsA.clean.html#alchp>`__.
+:ref:`respr`, :ref:`ttall`,
+:ref:`allocation` and especially
+:ref:`grab` and :ref:`reserve`
+work similar to :ref:`alchp`.
 
-See `DEL\_DEFB <KeywordsD.clean.html#del-defb>`__ concerning heap
+See :ref:`del-defb` concerning heap
 fragmentation.
 
 --------------
+
+
+..  _alias:
 
 ALIAS
 =====
 
 +----------+------------------------------------------------------------------+
-| Syntax   | ALIAS old\_keyword$ TO new\_keyword(ALIAS\_CODE) or              |
-|          | ALIAS new\_keyword TO old\_keyword$(SAILA\_CODE)                 |
+| Syntax   || ALIAS old\_keyword$ TO new\_keyword(ALIAS\_CODE) or             |
+|          || ALIAS new\_keyword TO old\_keyword$(SAILA\_CODE)                |
 +----------+------------------------------------------------------------------+
-| Location | ALIAS (DIY Toolkit - Vol A)                                      |
+| Location || ALIAS (DIY Toolkit - Vol A)                                     |
 +----------+------------------------------------------------------------------+
 
 This command is similar to NEW\_NAME and REPLACE.
@@ -791,13 +882,16 @@ implemented in the file SAILA\_CODE.
 
 **CROSS-REFERENCE**
 
-See also `REPLACE <KeywordsR.clean.html#replace>`__ and
-`NEW\_NAME <KeywordsN.clean.html#new-name>`__.
+See also :ref:`replace` and
+:ref:`new-name`.
 
-`\_NAME$ <Keywords_.clean.html#-name$>`__ allows you to look at the name
+:ref:`-name-dlr` allows you to look at the name
 table.
 
 --------------
+
+
+..  _aline:
 
 ALINE
 =====
@@ -872,15 +966,18 @@ ALINE only works in MODE 4.
 
 **CROSS-REFERENCE**
 
-`DRAW <KeywordsD.clean.html#draw>`__ has the same syntax as
-`ALINE <KeywordsA.clean.html#aline>`__ but does not work in XOR
-mode.\ `DRAW <KeywordsD.clean.html#draw>`__ is also able to draw lines on
+:ref:`draw` has the same syntax as
+:ref:`aline` but does not work in XOR
+mode.\ :ref:`draw` is also able to draw lines on
 screens stored in memory.
 
-`LINE <KeywordsL.clean.html#line>`__ and `LINE\_R <KeywordsL.clean.html#line-r>`__
+:ref:`line` and :ref:`line-r`
 are much more flexible.
 
 --------------
+
+
+..  _allocation:
 
 ALLOCATION
 ==========
@@ -898,15 +995,16 @@ and removed when the current job is removed.
 
 **CROSS-REFERENCE**
 
-`DEALLOCATE <KeywordsD.clean.html#deallocate>`__ should be used to remove the
+:ref:`deallocate` should be used to remove the
 allocated area.
 
-The `taskno% <Keywordst.clean.html#taskno%>`__ and
-`taskid% <Keywordst.clean.html#taskid%>`__ can be found using
-`JOBS <KeywordsJ.clean.html#jobs>`__ or
-`LIST\_TASKS <KeywordsL.clean.html#list-tasks>`__.
+The taskno% and taskid% can be found using
+:ref:`jobs` or :ref:`list-tasks`.
 
 --------------
+
+
+..  _alt:
 
 ALT
 ===
@@ -918,23 +1016,29 @@ ALT
 +----------+-------------------------------------------------------------------+
 
 This function returns the control codes needed to switch to the
-alternative font (normally italics) on an EPSON compatible printer:
-PRINT #ch,ALT
+alternative font (normally italics) on an EPSON compatible printer::
 
-is therefore eqivalent to: PRINT #ch,CHR$(27)&"6"
+    PRINT #ch,ALT
+
+is therefore equivalent to::
+
+    PRINT #ch,CHR$(27)&"6"
 
 **CROSS-REFERENCE**
 
-`NORM <KeywordsN.clean.html#norm>`__, `BLD <KeywordsB.clean.html#bld>`__,
-`EL <KeywordsE.clean.html#el>`__, `DBL <KeywordsD.clean.html#dbl>`__,
-`ENL <KeywordsE.clean.html#enl>`__, `PRO <KeywordsP.clean.html#pro>`__,
-`SI <KeywordsS.clean.html#si>`__, `NRM <KeywordsN.clean.html#nrm>`__,
-`UNL <KeywordsU.clean.html#unl>`__, `ESC <KeywordsE.clean.html#esc>`__,
-`FF <KeywordsF.clean.html#ff>`__, `LMAR <KeywordsL.clean.html#lmar>`__,
-`RMAR <KeywordsR.clean.html#rmar>`__, `PAGDIS <KeywordsP.clean.html#pagdis>`__,
-`PAGLEN <KeywordsP.clean.html#paglen>`__.
+:ref:`norm`, :ref:`bld`,
+:ref:`el`, :ref:`dbl`,
+:ref:`enl`, :ref:`pro`,
+:ref:`si`, :ref:`nrm`,
+:ref:`unl`, :ref:`esc`,
+:ref:`ff`, :ref:`lmar`,
+:ref:`rmar`, :ref:`pagdis`,
+:ref:`paglen`.
 
 --------------
+
+
+..  _alter:
 
 ALTER
 =====
@@ -979,19 +1083,22 @@ ALTER does not work on SMS.
 
 **CROSS-REFERENCE**
 
-See `SET <KeywordsS.clean.html#set>`__.
+See :ref:`set`.
 
 --------------
+
+
+..  _altkey:
 
 ALTKEY
 ======
 
 +----------+-------------------------------------------------------------------+
-| Syntax   | ALTKEY character$,string$ [,string2$ [,string2$... ]]  or         |
-|          | ALTKEY character$  or                                             |
-|          | ALTKEY                                                            |
+| Syntax   || ALTKEY character$,string$ [,string2$ [,string2$... ]]  or        |
+|          || ALTKEY character$  or                                            |
+|          || ALTKEY                                                           |
 +----------+-------------------------------------------------------------------+
-| Location |  Toolkit II                                                       |
+| Location ||  Toolkit II                                                      |
 +----------+-------------------------------------------------------------------+
 
 This command defines a key macro which will be typed into the computer
@@ -1064,11 +1171,14 @@ effect until you use the HOT\_GO command.
 
 **CROSS-REFERENCE**
 
-`FORCE\_TYPE <KeywordsF.clean.html#force-type>`__ and
-`STAMP <KeywordsS.clean.html#stamp>`__ allow programs to access the keyboard,
-`KEY <KeywordsK.clean.html#key>`__ defines macros on function keys.
+:ref:`force-type` and
+:ref:`stamp` allow programs to access the keyboard,
+:ref:`key` defines macros on function keys.
 
 --------------
+
+
+..  _and:
 
 AND
 ===
@@ -1111,10 +1221,13 @@ produces the following output:
 
 **CROSS-REFERENCE**
 
-`OR <KeywordsO.clean.html#or>`__, `NOT <KeywordsN.clean.html#not>`__ and
-`XOR <KeywordsX.clean.html#xor>`__ are the other combination operators.
+:ref:`or`, :ref:`not` and
+:ref:`xor` are the other combination operators.
 
 --------------
+
+
+..  _apoint:
 
 APOINT
 ======
@@ -1134,9 +1247,12 @@ APOINT suffers from the same problems and limitations as ALINE.
 
 **CROSS-REFERENCE**
 
-Use `POINT <KeywordsP.clean.html#point>`__ instead!!
+Use :ref:`point` instead!!
 
 --------------
+
+
+..  _append:
 
 APPEND
 ======
@@ -1156,10 +1272,13 @@ Both file1 and file2 must include the device name.
 
 **CROSS-REFERENCE**
 
-The THOR XVI has a special form of `COPY <KeywordsC.clean.html#copy>`__ which
+The THOR XVI has a special form of :ref:`copy` which
 is similar to this.
 
 --------------
+
+
+..  _aqconvert:
 
 AQCONVERT
 =========
@@ -1179,13 +1298,16 @@ LF.
 
 **CROSS-REFERENCE**
 
-Compare `IQCONVERT <KeywordsI.clean.html#iqconvert>`__ and
-`QACONVERT <KeywordsQ.clean.html#qaconvert>`__.
+Compare :ref:`iqconvert` and
+:ref:`qaconvert`.
 
-See also `ACOPY <KeywordsA.clean.html#acopy>`__ and
-`QCOPY <KeywordsQ.clean.html#qcopy>`__.
+See also :ref:`acopy` and
+:ref:`qcopy`.
 
 --------------
+
+
+..  _arc:
 
 ARC
 ===
@@ -1194,7 +1316,7 @@ ARC
 | Syntax   | ARC [#ch][,x\ :sup:`1`\ ,y\ :sup:`1`] TO x\ :sup:`2`\ ,y\ :sup:`2`\ ,angle :sup:`\*`\ [[;x\ :sup:`i`\ ,y\ :sup:`i`] |
 |          | TO x\ :sup:`j`\ ,y\ :sup:`j`\ ,angle\ :sup:`j`]\ :sup:`\*`                                                          |
 +----------+---------------------------------------------------------------------------------------------------------------------+
-| Location |  QL ROM                                                                                                             |
+| Location | QL ROM                                                                                                              |
 +----------+---------------------------------------------------------------------------------------------------------------------+
 
 ARC causes the two points at the co-ordinates
@@ -1209,9 +1331,9 @@ It therefore follows that the greater ABS(angle), the more pronounced is
 the curve on the arc.
 
 Multiple arcs can be draw with the same command by adding extra sets of
-parameters for each additional arc. For example:
+parameters for each additional arc. For example::
 
-ARC 100,10 TO 120,40,3 TO 80,70,3
+    ARC 100,10 TO 120,40,3 TO 80,70,3
 
 will actually draw two arcs, one between the points (100,10) and
 (120,40) with angle=3 and the second between the points (120,40) and
@@ -1219,9 +1341,9 @@ will actually draw two arcs, one between the points (100,10) and
 
 When drawing multiple arcs, there is actually no need for the next arc
 in the series to begin at the end of the previous arc, provided that a
-semicolon ';' is inserted between each set of parameters. For example:
+semicolon ';' is inserted between each set of parameters. For example::
 
-ARC 100,10 TO 120,40,3;30,40 TO 50,60,3
+    ARC 100,10 TO 120,40,3;30,40 TO 50,60,3
 
 Whether the arc is drawn clockwise or anti-clockwise depends upon two
 factors: If y\ :sup:`1`\ >y\ :sup:`2` and angle>0, then the arc will be
@@ -1288,14 +1410,17 @@ drive in some obscure circumstances. Get Minerva or SMSQ/E to be safe!!
 
 **CROSS-REFERENCE**
 
-`ARC\_R <KeywordsA.clean.html#arc-r>`__ works in exactly the same way as
-`ARC <KeywordsA.clean.html#arc>`__ but uses a relative co-ordinate system,
+:ref:`arc-r` works in exactly the same way as
+:ref:`arc` but uses a relative co-ordinate system,
 where the origin is the current position of the graphic cursor.
 
-`SCALE <KeywordsS.clean.html#scale>`__ sets the graphic origin and also the
+:ref:`scale` sets the graphic origin and also the
 size of the window.
 
 --------------
+
+
+..  _arc-r:
 
 ARC\_R
 ======
@@ -1304,7 +1429,7 @@ ARC\_R
 | Syntax   | ARC\_R [#ch][,x\ :sup:`1`\ ,y\ :sup:`1`] TO x\ :sup:`2`\ ,y\ :sup:`2`\ ,angle :sup:`\*`\ [[;x\ :sup:`i`\ ,y\ :sup:`i`] | 
 |          | TO x\ :sup:`j`\ ,y\ :sup:`j`\ ,angle\ :sup:`j`]\ :sup:`\*`                                                             | 
 +----------+------------------------------------------------------------------------------------------------------------------------+
-| Location |  QL ROM                                                                                                                |
+| Location | QL ROM                                                                                                                 |
 +----------+------------------------------------------------------------------------------------------------------------------------+
 
 This command draws an arc relative to the current graphic cursor. This
@@ -1348,12 +1473,15 @@ The same routine, but altered to use ARC:
 **CROSS-REFERENCE**
 
 The graphic cursor is moved with commands such as
-`POINT <KeywordsP.clean.html#point>`__, `ARC <KeywordsA.clean.html#arc>`__,
-`CIRCLE <KeywordsC.clean.html#circle>`__ and `LINE <KeywordsL.clean.html#line>`__.
+:ref:`point`, :ref:`arc`,
+:ref:`circle` and :ref:`line`.
 
-Please also see `ARC <KeywordsA.clean.html#arc>`__.
+Please also see :ref:`arc`.
 
 --------------
+
+
+..  _arcosh:
 
 ARCOSH
 ======
@@ -1366,22 +1494,27 @@ ARCOSH
 
 This function returns the arc hyperbolic cosine of the specified value,
 that is to say it will return the value which must be passed to the
-hyperbolic cosine to return the given result, so:
+hyperbolic cosine to return the given result, so::
 
-COSH ( ARCOSH ( x ))=x
+    COSH ( ARCOSH ( x )) = x
 
 The ARCOSH function can be expressed as a combination of SuperBASIC
-keywords: it's the same as LN(x + SQRT(x\*x-1)).
+keywords: it's the same as::
+
+    LN(x + SQRT(x*x-1)).
 
 **CROSS-REFERENCE**
 
-See `ACOS <KeywordsA.clean.html#acos>`__, `ASIN <KeywordsA.clean.html#asin>`__,
-`ACOT <KeywordsA.clean.html#acot>`__, `ATAN <KeywordsA.clean.html#atan>`__,
-`COSH <KeywordsC.clean.html#cosh>`__, `ARCOTH <KeywordsA.clean.html#arcoth>`__,
-`ARSINH <KeywordsA.clean.html#arsinh>`__ and
-`ARTANH <KeywordsA.clean.html#artanh>`__.
+See :ref:`acos`, :ref:`asin`,
+:ref:`acot`, :ref:`atan`,
+:ref:`cosh`, :ref:`arcoth`,
+:ref:`arsinh` and
+:ref:`artanh`.
 
 --------------
+
+
+..  _arcoth:
 
 ARCOTH
 ======
@@ -1402,10 +1535,13 @@ LN((x+1) / (x-1)) / 2
 
 **CROSS-REFERENCE**
 
-See `ACO <KeywordsA.clean.html#aco>`__\ T, `ARCOSH <KeywordsA.clean.html#arcosh>`__,
-and `ARTANH <KeywordsA.clean.html#artanh>`__.
+See :ref:`acot`, :ref:`arcosh`,
+and :ref:`artanh`.
 
 --------------
+
+
+..  _arsinh:
 
 ARSINH
 ======
@@ -1427,10 +1563,13 @@ gives the same value.
 
 **CROSS-REFERENCE**
 
-See `ASIN <KeywordsA.clean.html#asin>`__, `ARCOSH <KeywordsA.clean.html#arcosh>`__,
-and `ARCOTH <KeywordsA.clean.html#arcoth>`__.
+See :ref:`asin`, :ref:`arcosh`,
+and :ref:`arcoth`.
 
 --------------
+
+
+..  _artanh:
 
 ARTANH
 ======
@@ -1450,10 +1589,13 @@ ARTANH(x) could be replaced by: LN((1+x) / (1-x)) / 2
 
 **CROSS-REFERENCE**
 
-See `ATAN <KeywordsA.clean.html#atan>`__, `ARCOTH <KeywordsA.clean.html#arcoth>`__,
-and `ARSINH <KeywordsA.clean.html#arsinh>`__.
+See :ref:`atan`, :ref:`arcoth`,
+and :ref:`arsinh`.
 
 --------------
+
+
+..  _asin:
 
 ASIN
 ====
@@ -1500,17 +1642,20 @@ ABS(x2-x1,y2-y1)
 
 **CROSS-REFERENCE**
 
-`ACOS <KeywordsA.clean.html#acos>`__, `ATAN <KeywordsA.clean.html#atan>`__,
-`ACOT <KeywordsA.clean.html#acot>`__ are other arc functions,
-`SIN <KeywordsS.clean.html#sin>`__, `COS <KeywordsC.clean.html#cos>`__,
-`TAN <KeywordsT.clean.html#tan>`__ and `COT <KeywordsC.clean.html#cot>`__\ their
+:ref:`acos`, :ref:`atan`,
+:ref:`acot` are other arc functions,
+:ref:`sin`, :ref:`cos`,
+:ref:`tan` and :ref:`cot`\ their
 relatives.
 
 Please also see the Mathematics section of the Appendix.
 
-Compare `ARSINH <KeywordsA.clean.html#arsinh>`__.
+Compare :ref:`arsinh`.
 
 --------------
+
+
+..  _ask:
 
 ASK
 ===
@@ -1559,9 +1704,12 @@ own routine.
 
 **CROSS-REFERENCE**
 
-`CUR <KeywordsC.clean.html#cur>`__, `REPLY <KeywordsR.clean.html#reply>`__.
+:ref:`cur`, :ref:`reply`.
 
 --------------
+
+
+..  _astat:
 
 ASTAT
 =====
@@ -1578,23 +1726,26 @@ marks folder.
 
 **CROSS-REFERENCE**
 
-See `ADIR <KeywordsA.clean.html#adir>`__. `WSTAT <KeywordsW.clean.html#wstat>`__ is
+See :ref:`adir`. :ref:`wstat` is
 similar on QL Format disks.
 
-Other commands added are `ADELETE <KeywordsA.clean.html#adelete>`__,
-`ACOPY <KeywordsA.clean.html#acopy>`__ and
-`AFORMAT <KeywordsA.clean.html#aformat>`__.
+Other commands added are :ref:`adelete`,
+:ref:`acopy` and
+:ref:`aformat`.
 
 --------------
+
+
+..  _at:
 
 AT
 ==
 
 +----------+-------------------------------------------------------------------+
-| Syntax   | AT [#ch,] row, column  or                                         |
-|          | AT [#ch,] column,row (pre AH ROMs only)                           |
+| Syntax   || AT [#ch,] row, column  or                                        |
+|          || AT [#ch,] column,row (pre AH ROMs only)                          |
 +----------+-------------------------------------------------------------------+
-| Location | QL ROM                                                            |
+| Location || QL ROM                                                           |
 +----------+-------------------------------------------------------------------+
 
 This command sets the current print position in the given window
@@ -1652,31 +1803,35 @@ do update the ROM.
 
 **CROSS-REFERENCE**
 
-`CSIZE <KeywordsC.clean.html#csize>`__ sets the current character size for the
+:ref:`csize` sets the current character size for the
 given window
 
-`WINDOW <KeywordsW.clean.html#window>`__ alters the physical size of a given
+:ref:`window` alters the physical size of a given
 window.
 
-`CURSOR <KeywordsC.clean.html#cursor>`__ allows you to set the print position
+:ref:`cursor` allows you to set the print position
 more exactly.
 
-`PRINT <KeywordsP.clean.html#print>`__ actually prints things on screen at the
+:ref:`print` actually prints things on screen at the
 current print position.
 
-`VER$ <KeywordsV.clean.html#ver$>`__ allows you to check the ROM version.
+:ref:`ver-dlr` allows you to check the ROM version.
 
-Also see `LEFT <KeywordsL.clean.html#left>`__.
+Also see :ref:`left`.
 
 --------------
+
+
+..  _atan:
 
 ATAN
 ====
 
 +----------+-------------------------------------------------------------------+
-| Syntax   |  ATAN (x)  or ATAN (x,y) (Minerva and SMS only)                   |
+| Syntax   || ATAN (x)  or                                                     |
+|          || ATAN (x,y) (Minerva and SMS only)                                | 
 +----------+-------------------------------------------------------------------+
-| Location |  QL ROM                                                           |
+| Location || QL ROM                                                           |
 +----------+-------------------------------------------------------------------+
 
 The function ATAN, is the arc-tangent function, that is to say the
@@ -1748,11 +1903,14 @@ result is now in the range -PI/2...PI/2 instead of the usual 0...PI.
 
 **CROSS-REFERENCE**
 
-`TAN <KeywordsT.clean.html#tan>`__, `ATN <KeywordsA.clean.html#atn>`__,
-`ATN2 <KeywordsA.clean.html#atn2>`__ and `ARTANH <KeywordsA.clean.html#artanh>`__.
+:ref:`tan`, :ref:`atn`,
+:ref:`atn2` and :ref:`artanh`.
 Also please refer to the Mathematics section in the Appendix.
 
 --------------
+
+
+..  _atari:
 
 ATARI
 =====
@@ -1779,9 +1937,12 @@ This command will most probably fail on the latest ST/QL drivers.
 
 **CROSS-REFERENCE**
 
-See `QuATARI <KeywordsQ.clean.html#quatari>`__.
+See :ref:`quatari`.
 
 --------------
+
+
+..  _atari-ext:
 
 ATARI\_EXT
 ==========
@@ -1806,12 +1967,15 @@ ATARI\_REXT pre v2.37 may crash SMS.
 
 **CROSS-REFERENCE**
 
-See `TK2\_EXT <KeywordsT.clean.html#tk2-ext>`__ and
-`Beule\_EXT <KeywordsB.clean.html#beule-ext>`__.
+See :ref:`tk2-ext` and
+:ref:`beule-ext`.
 
-See also `SND\_EXT <KeywordsS.clean.html#snd-ext>`__.
+See also :ref:`snd-ext`.
 
 --------------
+
+
+..  _atn:
 
 ATN
 ===
@@ -1831,9 +1995,12 @@ dialects easier.
 
 **CROSS-REFERENCE**
 
-See `ATAN <KeywordsA.clean.html#atan>`__.
+See :ref:`atan`.
 
 --------------
+
+
+..  _atn2:
 
 ATN2
 ====
@@ -1885,9 +2052,12 @@ ATN2 and the difference from ATAN:
 
 **CROSS-REFERENCE**
 
-`ATAN <KeywordsA.clean.html#atan>`__ which is the same on Minerva and SMS.
+:ref:`atan` which is the same on Minerva and SMS.
 
 --------------
+
+
+..  _auto:
 
 AUTO
 ====
@@ -1968,11 +2138,14 @@ ED mode with the cursor at the specified start line number.
 
 **CROSS-REFERENCE**
 
-Please refer to `EDIT <KeywordsE.clean.html#edit>`__ which is very similar.
+Please refer to :ref:`edit` which is very similar.
 
-`DLINE <KeywordsD.clean.html#dline>`__ allows you to delete SuperBASIC lines.
+:ref:`dline` allows you to delete SuperBASIC lines.
 
 --------------
+
+
+..  _auto-dis:
 
 AUTO\_DIS
 =========
@@ -2001,10 +2174,13 @@ Toolkit II and does not show a start-up screen.
 
 **CROSS-REFERENCE**
 
-See\ `AUTO\_TK2F1 <KeywordsA.clean.html#auto-tk2f1>`__ and
-`AUTO\_TK2F2 <KeywordsA.clean.html#auto-tk2f2>`__ also.
+See\ :ref:`auto-tk2f1` and
+:ref:`auto-tk2f2` also.
 
 --------------
+
+
+..  _auto-tk2f1:
 
 AUTO\_TK2F1
 ===========
@@ -2025,13 +2201,16 @@ by the Super Gold Card even when the power is disconnected.
 
 **CROSS-REFERENCE**
 
-See also `AUTO\_DIS <KeywordsA.clean.html#auto-dis>`__ and
-`AUTO\_TK2F2 <KeywordsA.clean.html#auto-tk2f2>`__.
+See also :ref:`auto-dis` and
+:ref:`auto-tk2f2`.
 
-`TK2\_EXT <KeywordsT.clean.html#tk2-ext>`__ is needed to initialise Toolkit II
+:ref:`tk2-ext` is needed to initialise Toolkit II
 if this command has not been used.
 
 --------------
+
+
+..  _auto-tk2f2:
 
 AUTO\_TK2F2
 ===========
@@ -2047,9 +2226,12 @@ started up in F2 TV mode.
 
 **CROSS-REFERENCE**
 
-See\ `AUTO\_TK2F1 <KeywordsA.clean.html#auto-tk2f1>`__.
+See\ :ref:`auto-tk2f1`.
 
 --------------
+
+
+..  _a-blank:
 
 A\_BLANK
 ========
@@ -2077,9 +2259,12 @@ This command will only work within the Pointer Environment.
 
 **CROSS-REFERENCE**
 
-`BLS <KeywordsB.clean.html#bls>`__ is a similar function under SERMouse.
+:ref:`bls` is a similar function under SERMouse.
 
 --------------
+
+
+..  _a-emulator:
 
 A\_EMULATOR
 ===========
@@ -2113,10 +2298,13 @@ You can also use DISP\_TYPE to find out the Emulator type.
 
 **CROSS-REFERENCE**
 
-See also `PROCESSOR <KeywordsP.clean.html#processor>`__ and
-`MACHINE <KeywordsM.clean.html#machine>`__.
+See also :ref:`processor` and
+:ref:`machine`.
 
 --------------
+
+
+..  _a-machine:
 
 A\_MACHINE
 ==========
@@ -2131,10 +2319,13 @@ This function is the same as MACHINE.
 
 **CROSS-REFERENCE**
 
-See\ `MACHINE <KeywordsM.clean.html#machine>`__ and also
-`A\_EMULATOR <KeywordsA.clean.html#a-emulator>`__.
+See\ :ref:`machine` and also
+:ref:`a-emulator`.
 
 --------------
+
+
+..  _a-oldscr:
 
 A\_OLDSCR
 =========
@@ -2182,14 +2373,17 @@ errror 'Already Exists' is reported.
 
 **CROSS-REFERENCE**
 
-`SCREEN <KeywordsS.clean.html#screen>`__ can be used to find the screen
+:ref:`screen` can be used to find the screen
 address.
 
-`SCR\_SIZE <KeywordsS.clean.html#scr-size>`__ can be used to set the
+:ref:`scr-size` can be used to set the
 resolution of the display - much software will insist that this is set
 to 512x256 pixels also.
 
 --------------
+
+
+..  _a-processor:
 
 A\_PROCESSOR
 ============
@@ -2204,9 +2398,12 @@ This function is the same as PROCESSOR.
 
 **CROSS-REFERENCE**
 
-See `PROCESSOR <KeywordsP.clean.html#processor>`__!
+See :ref:`processor`!
 
 --------------
+
+
+..  _a-rdate:
 
 A\_RDATE
 ========
@@ -2227,9 +2424,12 @@ clock.
 
 **CROSS-REFERENCE**
 
-See `A\_SDATE <KeywordsA.clean.html#a-sdate>`__.
+See :ref:`a-sdate`.
 
 --------------
+
+
+..  _a-sdate:
 
 A\_SDATE
 ========
@@ -2261,12 +2461,15 @@ clock.
 
 **CROSS-REFERENCE**
 
-See `SDATE <KeywordsS.clean.html#sdate>`__.
+See :ref:`sdate`.
 
-`A\_RDATE <KeywordsA.clean.html#a-rdate>`__ will set the internal clock to the
+:ref:`a-rdate` will set the internal clock to the
 same date and time as the battery backed clock.
 
 --------------
+
+
+..  _a-speed:
 
 A\_SPEED
 ========
@@ -2288,4 +2491,5 @@ slowly.
 
 **CROSS-REFERENCE**
 
-`SLUG <KeywordsS.clean.html#slug>`__ is very similar.
+:ref:`slug` is very similar.
+
